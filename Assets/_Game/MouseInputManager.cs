@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 
@@ -8,6 +9,8 @@ public class MouseInputManager : MonoBehaviour
 
     private Camera _mainCamera;
     private Vector3 _mousePosition;
+    
+    public TextMeshProUGUI GridSizeText;
 
     void Start()
     {
@@ -25,11 +28,13 @@ public class MouseInputManager : MonoBehaviour
         _mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         _mousePosition.z = 0;
         indicatorObject.transform.position = GetPositionOnGrid(_mousePosition);
+        
+        GridSizeText.text = "Grid Size: " + gridWidth + " x " + gridHeight;
     }
 
 
-    public float gridWidth = .5f;
-    public float gridHeight = .5f;
+    public float gridWidth = 1f;
+    public float gridHeight = 1f;
     
     
     private Vector3 GetPositionOnGrid(Vector3 rawPosition)
@@ -39,6 +44,12 @@ public class MouseInputManager : MonoBehaviour
         pointerPosition.y = Mathf.Floor(rawPosition.y / gridHeight) * gridHeight + gridHeight / 2;
         
         return pointerPosition;
+    }
+    
+    public void MultiplyGridDimension(float d)
+    {
+        gridWidth *= d;
+        gridHeight *= d;
     }
     
 }
