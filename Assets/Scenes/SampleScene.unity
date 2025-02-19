@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 502805805}
   - component: {fileID: 502805804}
   m_Layer: 5
-  m_Name: -button
+  m_Name: GridDivide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,17 +281,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502805802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4832345}
-  m_Father: {fileID: 592958192}
+  m_Father: {fileID: 1843879964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 170, y: -10}
+  m_AnchoredPosition: {x: -739.43915, y: 480.31567}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &502805804
@@ -338,8 +338,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207248961}
-        m_TargetAssemblyTypeName: MouseInputManager, Assembly-CSharp
+      - m_Target: {fileID: 1207248963}
+        m_TargetAssemblyTypeName: _Game.BuildingSystem.WorldGridSystem, Assembly-CSharp
         m_MethodName: MultiplyGridDimension
         m_Mode: 4
         m_Arguments:
@@ -650,9 +650,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1391611568}
-  - {fileID: 502805803}
-  - {fileID: 1072926905}
+  - {fileID: 1843879964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -756,7 +754,7 @@ GameObject:
   - component: {fileID: 1072926907}
   - component: {fileID: 1072926906}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GridSizeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,17 +767,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072926904}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 592958192}
+  m_Father: {fileID: 1843879964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 499.8}
-  m_SizeDelta: {x: 474.346, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -744.44, y: 263.29797}
+  m_SizeDelta: {x: 310, y: 123.404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072926906
 MonoBehaviour:
@@ -969,6 +967,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1207248962}
   - component: {fileID: 1207248961}
+  - component: {fileID: 1207248963}
+  - component: {fileID: 1207248964}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -988,11 +988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4c1f086c167e743a06ca1e952951d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicatorObjectPrefab: {fileID: 1801524351098494346, guid: 5fd6aa6481083f54f9a4e216a1f7403c, type: 3}
-  indicatorObject: {fileID: 0}
-  GridSizeText: {fileID: 1072926906}
-  gridWidth: 1
-  gridHeight: 1
 --- !u!4 &1207248962
 Transform:
   m_ObjectHideFlags: 0
@@ -1008,6 +1003,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1207248963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207248960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dacee2428e7b7146820d47a48d839ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 1
+  gridHeight: 1
+  gridWidthText: {fileID: 1072926906}
+  currentBuildings: []
+--- !u!114 &1207248964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207248960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb57d8ec39552a14781d6bf1669fcd20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  buidlingAtHand: {fileID: 0}
+  placeableBuildingPrefab: {fileID: 0}
 --- !u!1 &1328493844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1183,7 @@ GameObject:
   - component: {fileID: 1391611570}
   - component: {fileID: 1391611569}
   m_Layer: 5
-  m_Name: +button
+  m_Name: GridMultiply
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1170,17 +1196,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391611567}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1328493845}
-  m_Father: {fileID: 592958192}
+  m_Father: {fileID: 1843879964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -10}
+  m_AnchoredPosition: {x: -899.439, y: 480.31567}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1391611569
@@ -1227,8 +1253,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207248961}
-        m_TargetAssemblyTypeName: MouseInputManager, Assembly-CSharp
+      - m_Target: {fileID: 1207248963}
+        m_TargetAssemblyTypeName: _Game.BuildingSystem.WorldGridSystem, Assembly-CSharp
         m_MethodName: MultiplyGridDimension
         m_Mode: 4
         m_Arguments:
@@ -1277,6 +1303,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391611567}
   m_CullTransparentMesh: 1
+--- !u!1 &1843879963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1843879964}
+  m_Layer: 5
+  m_Name: GridSystemUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1843879964
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843879963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1391611568}
+  - {fileID: 502805803}
+  - {fileID: 1072926905}
+  m_Father: {fileID: 592958192}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1973993114
 GameObject:
   m_ObjectHideFlags: 0
