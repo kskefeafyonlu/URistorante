@@ -82,5 +82,28 @@ public class Mouse_BuildingManager : MonoBehaviour
         WorldGridSystem.Instance.currentBuildings.Add(newBuildingObject.GetComponent<PlaceableBuilding>());
     }
     
-    
+    public void SetBuildingAtHand(PlaceableBuildingData buildingData)
+    {
+        if (buildingData == null) return;
+        
+        // Instantiate a new building at the mouse position
+        if (placeableBuildingPrefab != null)
+        {
+            // Destroy existing building at hand if there is one
+            if (buidlingAtHand != null)
+            {
+                Destroy(buidlingAtHand.gameObject);
+            }
+            
+            // Create new building
+            Vector3 position = WorldGridSystem.Instance.GetPositionOnGrid(MouseInputManager.Instance.GetMousePosition());
+            GameObject newBuildingObject = Instantiate(placeableBuildingPrefab, position, Quaternion.identity);
+            buidlingAtHand = newBuildingObject.GetComponent<PlaceableBuilding>();
+            
+            if (buidlingAtHand != null)
+            {
+                buidlingAtHand.SetBuildingFunctionality(buildingData);
+            }
+        }
+    }
 }

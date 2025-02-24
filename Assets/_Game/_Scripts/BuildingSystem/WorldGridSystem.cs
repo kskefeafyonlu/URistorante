@@ -1,12 +1,12 @@
 using System.Collections.Generic;
+using _Game.General._Project._Scripts.General.ClassBases;
 using TMPro;
 using UnityEngine;
 
 namespace _Game.BuildingSystem
 {
-    public class WorldGridSystem : MonoBehaviour
+    public class WorldGridSystem : MonoSingleton<WorldGridSystem>
     {
-        public static WorldGridSystem Instance;
         
         
         private float _maxGridDimension = 4f;
@@ -18,25 +18,12 @@ namespace _Game.BuildingSystem
         public TextMeshProUGUI gridWidthText;
         
         
-        public List<PlaceableBuilding> currentBuildings = new List<PlaceableBuilding>();
-    
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(this);
-            }
-        }
+        public List<PlaceableBuilding> currentBuildings = new ();
         
         private void Start()
         {
             gridWidthText.text = gridWidth.ToString();
         }
-        
         
     
         public Vector3 GetPositionOnGrid(Vector3 rawPosition)

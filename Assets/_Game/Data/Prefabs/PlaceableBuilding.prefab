@@ -175,5 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5620a2565e17444dacd3ae3b3bb4cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
-  Collider: {fileID: 0}
+  data: {fileID: 11400000, guid: 597bc924e8843894dbd1bc67e7491f28, type: 2}
+  Collider: {fileID: 467333249742121242}
