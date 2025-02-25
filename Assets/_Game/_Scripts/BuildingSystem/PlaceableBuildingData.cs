@@ -8,8 +8,8 @@ namespace _Game.BuildingSystem
     {
         public string buildingName;
         public Sprite preview;
-        public Sprite itemImage;
         public BuildingType buildingType = BuildingType.One;
+        public GameObject buildingPrefab;
     
         public float buildingWidth = 1f;
         public float buildingHeight = 1f;

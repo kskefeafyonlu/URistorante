@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using _Game.General._Project._Scripts.General.ClassBases;
 using TMPro;
 using UnityEngine;
 
 namespace _Game.BuildingSystem
 {
-    public class WorldGridSystem : MonoSingleton<WorldGridSystem>
+    public class WorldGridSystem : MonoBehaviour
     {
-        
+        // Singleton implementation
+        public static WorldGridSystem Instance { get; private set; }
         
         private float _maxGridDimension = 4f;
         private float _minGridDimension = 0.125f;
@@ -17,15 +17,36 @@ namespace _Game.BuildingSystem
         
         public TextMeshProUGUI gridWidthText;
         
+        public List<PlaceableBuilding> currentBuildings = new();
         
-        public List<PlaceableBuilding> currentBuildings = new ();
+        private void Awake()
+        {
+            // Correct singleton implementation
+            if (Instance == null)
+            {
+                Instance = this;
+                // Uncomment if you want it to persist between scenes
+                // DontDestroyOnLoad(gameObject);
+            }
+            else if (Instance != this)
+            {
+                Debug.LogWarning("Found duplicate WorldGridSystem - destroying duplicate");
+                Destroy(gameObject);
+            }
+        }
         
         private void Start()
         {
-            gridWidthText.text = gridWidth.ToString();
+            if (gridWidthText != null)
+            {
+                gridWidthText.text = gridWidth.ToString();
+            }
+            else
+            {
+                Debug.LogWarning("gridWidthText reference is null in WorldGridSystem");
+            }
         }
         
-    
         public Vector3 GetPositionOnGrid(Vector3 rawPosition)
         {
             Vector3 pointerPosition = new Vector3();
@@ -44,10 +65,10 @@ namespace _Game.BuildingSystem
             gridWidth *= d;
             gridHeight *= d;
             
-            gridWidthText.text = gridWidth.ToString();
+            if (gridWidthText != null)
+            {
+                gridWidthText.text = gridWidth.ToString();
+            }
         }
     }
-    
-    
-    
 }

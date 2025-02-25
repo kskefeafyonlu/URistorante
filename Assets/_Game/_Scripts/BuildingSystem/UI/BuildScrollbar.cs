@@ -49,9 +49,9 @@ namespace _Game.BuildingSystem
             else
             {
                 Image buttonImage = buttonObj.GetComponent<Image>();
-                if (buttonImage != null && buildingData.itemImage != null)
+                if (buttonImage != null && buildingData.preview != null)
                 {
-                    buttonImage.sprite = buildingData.itemImage;
+                    buttonImage.sprite = buildingData.preview;
                 }
                 
                 Button button = buttonObj.GetComponent<Button>();
@@ -75,10 +75,13 @@ namespace _Game.BuildingSystem
         {
             foreach (var button in _instantiatedButtons)
             {
-                Destroy(button);
+                if (button != null)
+                {
+                    button.SetActive(false);
+                }
             }
             
-            _instantiatedButtons.Clear();
+            _usedButtons.Clear();
         }
     }
 }
