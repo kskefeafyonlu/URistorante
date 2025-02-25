@@ -24,9 +24,9 @@ namespace _Project._Scripts.General.ClassBases
                 {
                     if (_instance == null)
                     {
-                        _instance = (T)FindObjectOfType(typeof(T));
+                        _instance = FindObjectOfType<T>();
 
-                        if (FindObjectsOfType(typeof(T)).Length > 1)
+                        if (FindObjectsOfType<T>().Length > 1)
                         {
                             Debug.LogError($"[Singleton] Something went wrong - there should never be more than 1 singleton! Reopening the scene might fix it.");
                             return _instance;
