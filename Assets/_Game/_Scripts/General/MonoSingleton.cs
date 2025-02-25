@@ -1,4 +1,4 @@
-﻿namespace _Game.General
+namespace _Game.General
 {
 using UnityEngine;
 
