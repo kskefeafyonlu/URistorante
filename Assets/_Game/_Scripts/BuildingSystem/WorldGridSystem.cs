@@ -3,7 +3,7 @@ using _Game.General._Project._Scripts.General.ClassBases;
 using TMPro;
 using UnityEngine;
 
-namespace _Game.BuildingSystem
+namespace _Game._Scripts.BuildingSystem
 {
     public class WorldGridSystem : MonoSingleton<WorldGridSystem>
     {

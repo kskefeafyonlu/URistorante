@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace _Game
+namespace _Game._Scripts
 {
     public class MouseInputManager : MonoBehaviour
     {

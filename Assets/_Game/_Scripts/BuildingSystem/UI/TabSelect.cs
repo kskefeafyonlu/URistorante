@@ -1,8 +1,8 @@
 ﻿using System;
-using _Game._Scripts;
+using _Game.BuildingSystem;
 using UnityEngine;
 
-namespace _Game.BuildingSystem
+namespace _Game._Scripts.BuildingSystem.UI
 {
     public class BuildingTabSelect: MonoBehaviour
     {

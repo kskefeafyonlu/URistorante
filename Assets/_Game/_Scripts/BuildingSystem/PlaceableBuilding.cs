@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace _Game.BuildingSystem
+namespace _Game._Scripts.BuildingSystem
 {
     public class PlaceableBuilding : MonoBehaviour
     {
